@@ -1,0 +1,23 @@
+{% extends 'cookbook/base.html' %}
+
+{% block body %}
+<div>product_id :{{ product_id }}</div>
+
+{% if recipes %}
+<table border="1" cellspacing="1" cellpadding="1">
+    <tr>
+        <td>ID</td>
+        <td>Рецепты</td>
+    </tr>
+    {% for recipe in recipes %}
+    <tr>
+        <td>{{ recipe.id }}</td>
+        <td>{{ recipe.name }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+Нет рецептов
+{% endif %}
+
+{% endblock %}
